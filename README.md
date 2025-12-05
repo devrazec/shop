@@ -147,9 +147,9 @@ http://localhost:3000
 
 # Demo
 
-https://devrazec.github.io/amazon
+https://devrazec.github.io/shop
 
 # Links
 
-https://worldvectorlogo.com/random-logos
-https://github.com/levinmejia/Shopify-Product-CSVs-and-Images
+- https://worldvectorlogo.com/random-logos
+- https://github.com/levinmejia/Shopify-Product-CSVs-and-Images

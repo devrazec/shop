@@ -65,7 +65,7 @@ export default function SearchBar() {
 
       return {
         id: row.id,
-        product: randomProduct.product,
+        product: randomProduct.name,
         seller: row.traderName,
         stock: row.quantity,
         price: "€ " + row.unitPrice,
@@ -74,8 +74,10 @@ export default function SearchBar() {
         lat,
         lng,
         status: row.status,
-        image: `/shop/img/product/${(index % 245) + 1}.jpeg`,
-        //image: `/shop/img/product/${randomProduct.image}`,
+        gender: randomProduct.gender,
+        type: randomProduct.type,
+        color: randomProduct.color,
+        image: `/shop/img/product/${randomProduct.image}`,
       };
     }) ?? [];
 
