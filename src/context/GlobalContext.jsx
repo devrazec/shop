@@ -11,7 +11,8 @@ const GlobalProvider = (props) => {
   const [portugalGeo, setPortugalGeo] = useState(portugalJson);
   const [filterOpen, setFilterOpen] = useState(false);
   const [flagOpen, setFlagOpen] = useState(false);
-  const [flag, setFlag] = useState("us");
+  const [selectedFlag, setSelectedFlag] = useState("EN");
+  const [flag, setFlag] = useState(["EN", "PT", "ES"]);
   const [hoveredId, setHoveredId] = useState(null);
 
   const [region, setRegion] = useState({
@@ -81,6 +82,63 @@ const GlobalProvider = (props) => {
 
   const [product, setProduct] = useState(productJson);
 
+  const [color, setColor] = useState([
+    "White",
+    "Black",
+    "Blue",
+    "Pink",
+    "Red",
+    "Olive",
+    "Yellow",
+    "Navy Blue",
+    "Magenta",
+    "Grey",
+    "Green",
+    "Orange",
+    "Purple",
+    "Turquoise Blue",
+    "Peach",
+    "Off White",
+    "Teal",
+    "Sea Green",
+    "Lime Green",
+    "Brown",
+    "Lavender",
+    "Beige",
+    "Khaki",
+    "Multi",
+    "Maroon",
+    "Cream",
+    "Rust",
+    "Grey Melange",
+  ]);
+
+  const [category, setCategory] = useState([
+    "Tops",
+    "Capris",
+    "Dresses",
+    "Shorts",
+    "Tshirts",
+    "Skirts",
+    "Jeans",
+    "Leggings",
+    "Innerwear Vests",
+    "Rompers",
+    "Lehenga Choli",
+    "Salwar",
+    "Booties",
+    "Clothing Set",
+    "Trousers",
+    "Shirts",
+    "Jackets",
+    "Kurtas",
+    "Sweatshirts",
+    "Kurta Sets",
+    "Churidar",
+    "Waistcoat",
+    "Blazers",
+  ]);
+
   return (
     <GlobalContext.Provider
       value={{
@@ -92,6 +150,8 @@ const GlobalProvider = (props) => {
         setFilterOpen,
         flagOpen,
         setFlagOpen,
+        selectedFlag,
+        setSelectedFlag,
         flag,
         setFlag,
         hoveredId,
@@ -112,6 +172,10 @@ const GlobalProvider = (props) => {
         setCityBounds,
         product,
         setProduct,
+        color,
+        setColor,
+        category,
+        setCategory,
       }}
     >
       {props.children}

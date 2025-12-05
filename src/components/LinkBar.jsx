@@ -19,6 +19,7 @@ export default function LinkBar() {
         alignItems: "center",
         gap: 3,
         mt: 1,
+        ml: 2,
         p: 1,
         bgcolor: "#014034",
         overflowX: { xs: "auto", sm: "auto" }, // scroll on small screens only
@@ -31,14 +32,14 @@ export default function LinkBar() {
     >
       {/* Active Filter (Green) */}
       <Button
-        variant="text"
+        variant="outlined"
         sx={{
           textTransform: "none",
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
           fontWeight: "bold",
-          //bgcolor: '#057642',
+          bgcolor: "#057642",
           color: "#fff",
           flexShrink: 0, // prevent shrinking in scroll
           "&:hover": { bgcolor: "#045c34" },
@@ -49,7 +50,7 @@ export default function LinkBar() {
 
       {/* Pill Filters */}
       <Button
-        variant="text"
+        variant="outlined"
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -57,16 +58,16 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Today's Deals</Typography>
+        <Typography sx={{ color: "white" }}>Girls</Typography>
       </Button>
 
       <Button
-        variant="text"
+        variant="outlined"
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -74,16 +75,17 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Prime Video</Typography>
+        <Typography sx={{ color: "white" }}>Boys</Typography>
       </Button>
 
       <Button
-        variant="text"
+        variant="outlined"
+        endIcon={<KeyboardArrowDownIcon />}
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -91,16 +93,17 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Registry</Typography>
+        <Typography sx={{ color: "white" }}>Color</Typography>
       </Button>
 
       <Button
-        variant="text"
+        variant="outlined"
+        endIcon={<KeyboardArrowDownIcon />}
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -108,16 +111,17 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Gift Cards</Typography>
+        <Typography sx={{ color: "white" }}>Category</Typography>
       </Button>
 
       <Button
-        variant="text"
+        variant="outlined"
+        endIcon={<KeyboardArrowDownIcon />}
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -125,16 +129,17 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Customer Service</Typography>
+        <Typography sx={{ color: "white" }}>Location</Typography>
       </Button>
 
       <Button
-        variant="text"
+        variant="outlined"
+        endIcon={<KeyboardArrowDownIcon />}
         sx={{
           textTransform: "none",
           borderRadius: "999px",
@@ -142,12 +147,12 @@ export default function LinkBar() {
           whiteSpace: "nowrap",
           fontWeight: "bold",
           color: "#FFF",
-          //borderColor: '#ccc',
+          borderColor: "#ccc",
           flexShrink: 0,
           "&:hover": { bgcolor: "#045c34" },
         }}
       >
-        <Typography sx={{ color: "white" }}>Sell</Typography>
+        <Typography sx={{ color: "white" }}>Brand</Typography>
       </Button>
     </Box>
   );

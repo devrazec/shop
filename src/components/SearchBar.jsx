@@ -3,6 +3,7 @@ import { TextField, Box, Avatar } from "@mui/material";
 import Autocomplete from "@mui/material/Autocomplete";
 import { useDemoData } from "@mui/x-data-grid-generator";
 import { GlobalContext } from "../context/GlobalContext";
+import { v4 as uuidv4 } from "uuid";
 
 export default function SearchBar() {
   const {
@@ -53,6 +54,11 @@ export default function SearchBar() {
     return { lat, lng };
   }
 
+  const randomId = () => {
+    const id = uuidv4();
+    return id;
+  };
+
   // Build rows safely (guard when demo data hasn't loaded yet)
   const rows =
     data?.rows?.map((row, index) => {
@@ -75,7 +81,7 @@ export default function SearchBar() {
         lng,
         status: row.status,
         gender: randomProduct.gender,
-        type: randomProduct.type,
+        category: randomProduct.type,
         color: randomProduct.color,
         image: `/shop/img/product/${randomProduct.image}`,
       };
@@ -101,7 +107,7 @@ export default function SearchBar() {
             height: "100vh", // full screen height
             maxHeight: "80vh", // or 100vh
             left: "0 !important",
-            borderRadius: 0,
+            borderRadius: 1,
             padding: 2,
             overflow: "hidden", // ⬅️ important so children don't spill out
           },
@@ -121,7 +127,7 @@ export default function SearchBar() {
         const { key, ...rest } = props;
         return (
           <li
-            key={key}
+            key={key.id}
             {...rest}
             style={{ display: "flex", justifyContent: "center", padding: 8 }}
           >
@@ -131,7 +137,7 @@ export default function SearchBar() {
                 border: "1px solid #ddd",
                 borderRadius: 2,
                 overflow: "hidden",
-                boxShadow: 1,
+                boxShadow: 2,
               }}
             >
               <Box

@@ -126,7 +126,8 @@ npm i -S flag-icons @mui/icons-material iconsax-react @iconify/react react-icons
 
 -- Components
 
-npm i -S @mui/x-date-pickers dayjs @mui/x-data-grid @mui/x-data-grid-generator
+npm i -S @mui/x-date-pickers dayjs @mui/x-data-grid @mui/x-data-grid-generator 
+npm i -S uuid
 
 -- Maps
 
@@ -153,3 +154,4 @@ https://devrazec.github.io/shop
 
 - https://worldvectorlogo.com/random-logos
 - https://github.com/levinmejia/Shopify-Product-CSVs-and-Images
+- https://www.convertcsv.com/csv-to-json.htm
