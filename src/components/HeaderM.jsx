@@ -20,35 +20,32 @@ import {
   InputLabel,
   Button,
   Menu,
-  ToggleButton, ToggleButtonGroup, NativeSelect,
+  ToggleButton,
+  ToggleButtonGroup,
+  NativeSelect,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import LinkBar from "./LinkBar";
+import LinkBarM from "./LinkBarM";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
-
   const {
     darkMode,
     setDarkMode,
     portugalGeo,
     setPortugalGeo,
-    filterOpen,
-    setFilterOpen,
-    flagOpen,
-    setFlagOpen,
     selectedFlag,
     setSelectedFlag,
     flag,
     setFlag,
     hoveredId,
     setHoveredId,
-    region,
-    setRegion,
-    selectedRegion,
-    setSelectedRegion,
+    location,
+    setLocation,
+    selectedLocation,
+    setSelectedLocation,
     selectedProduct,
     setSelectedProduct,
     zoomView,
@@ -65,10 +62,20 @@ export default function Header() {
     setColor,
     category,
     setCategory,
+    selectedColor,
+    setSelectedColor,
+    selectedBrand,
+    setSelectedBrand,
+    selectedCategory,
+    setSelectedCategory,
+    filterAll,
+    setFilterAll,
+    filterGirls,
+    setFilterGirls,
+    filterBoys,
+    setFilterBoys,
   } = useContext(GlobalContext);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  //const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -128,10 +135,7 @@ export default function Header() {
           }}
         >
           <SearchBar />
-
-
         </Box>
-
 
         {/* Right section hidden on very small screens */}
         <Box
@@ -142,33 +146,38 @@ export default function Header() {
           }}
         >
 
-          <FormControl sx={{ minWidth: 80, position: "relative" }}>
+          {/* <FormControl sx={{ minWidth: 80, position: "relative" }}>
             <NativeSelect
               value={selectedFlag}
               onChange={(e) => setSelectedFlag(e.target.value)}
               disableUnderline
               sx={{
-                // Colors & layout
                 color: "white",
                 fontSize: "16px",
-                paddingLeft: "26px", // space for flag
+                paddingLeft: "26px",
 
-                // Remove arrow
                 "& select": {
                   appearance: "none",
                   WebkitAppearance: "none",
                   MozAppearance: "none",
                   paddingRight: "0px",
                   color: "white",
-
                 },
 
-                // Remove border completely
                 "& .MuiNativeSelect-select": {
                   border: "none",
+                  color: "white",
                 },
 
                 "& option": {
+                  color: "white",
+                },
+
+                "& .MuiNativeSelect-iconStandard": {
+                  color: "white",
+                },
+
+                "& .MuiSvgIcon-root": {
                   color: "white",
                 },
               }}
@@ -178,7 +187,6 @@ export default function Header() {
               <option value="ES">ES</option>
             </NativeSelect>
 
-            {/* Flag inside the select, same size as text */}
             <span
               className={flag[selectedFlag]}
               style={{
@@ -186,13 +194,47 @@ export default function Header() {
                 left: "0px",
                 top: "50%",
                 transform: "translateY(-50%)",
-                fontSize: "16px",  // 🔥 same size as label
+                fontSize: "16px",
                 lineHeight: "16px",
                 pointerEvents: "none",
               }}
             />
-          </FormControl>
+          </FormControl> */}
 
+          <Select
+            value={selectedFlag}
+            onChange={(e) => {
+              const value = e.target.value;
+              setSelectedFlag(value);
+            }}
+            displayEmpty
+            renderValue={() => {
+              const selected = flag.find(f => f.code === selectedFlag);
+              return (
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  {selected && <span className={selected.icon} style={{ fontSize: 18 }} />}
+                  <Typography sx={{ fontWeight: 600, paddingLeft: "5px", color: "white" }}>{selected.code}</Typography>
+                </Box>
+              );
+            }}
+            sx={{
+              width: 90,
+              "& .MuiSelect-select": { display: "flex", alignItems: "center" },
+              "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "&:hover .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "& .MuiSelect-icon": { color: "white" },
+            }}
+          >
+            {flag.map((f) => (
+              <MenuItem key={f.code} value={f.code}>
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <span className={f.icon} style={{ fontSize: 24, marginRight: 8 }} />
+                  <Typography>{f.name}</Typography>
+                </Box>
+              </MenuItem>
+            ))}
+          </Select>
 
           <Box
             sx={{ display: "flex", flexDirection: "column", color: "white" }}
@@ -221,7 +263,7 @@ export default function Header() {
         </IconButton>
       </Toolbar>
 
-      <LinkBar />
+      <LinkBarM />
 
       {/* Drawer for mobile */}
       <Drawer anchor="left" open={open} onClose={toggleDrawer(false)}>

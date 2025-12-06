@@ -107,9 +107,13 @@ base: '/shop',
 
 git rm --cached .env
 
--- UI
+-- Material UI
 
 npm i -S @mui/material @emotion/react @emotion/styled 
+
+-- Primereact UI
+
+npm i -S primereact primeicons primeflex
 
 -- Fonts
 

@@ -9,13 +9,16 @@ export const GlobalContext = createContext();
 const GlobalProvider = (props) => {
   const [darkMode, setDarkMode] = useState(false);
   const [portugalGeo, setPortugalGeo] = useState(portugalJson);
-  const [filterOpen, setFilterOpen] = useState(false);
-  const [flagOpen, setFlagOpen] = useState(false);
   const [selectedFlag, setSelectedFlag] = useState("EN");
-  const [flag, setFlag] = useState({ EN: 'fi fi-gb', PT: 'fi fi-pt', ES: 'fi fi-es' });
+  const [flag, setFlag] = useState([
+    { name: 'English', code: 'EN', icon: 'fi fi-gb' },
+    { name: 'Portuguese', code: 'PT', icon: 'fi fi-pt' },
+    { name: 'Spanish', code: 'ES', icon: 'fi fi-es' }
+  ]);
+
   const [hoveredId, setHoveredId] = useState(null);
 
-  const [region, setRegion] = useState({
+  const [location, setLocation] = useState({
     All: L.latLngBounds([
       [36.9, -9.5], // southwestern Portugal
       [42.1, -6.2], // northeastern Portugal
@@ -54,7 +57,7 @@ const GlobalProvider = (props) => {
     ]),
   });
 
-  const [selectedRegion, setSelectedRegion] = useState(["All"]);
+  const [selectedLocation, setSelectedLocation] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [zoomView, setZoomView] = useState(7);
   const [initialView, setInitialView] = useState([39.3999, -8.2245]);
@@ -138,6 +141,12 @@ const GlobalProvider = (props) => {
     "Waistcoat",
     "Blazers",
   ]);
+  const [selectedColor, setSelectedColor] = useState([]);
+  const [selectedBrand, setSelectedBrand] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState([]);
+  const [filterAll, setFilterAll] = useState(true);
+  const [filterGirls, setFilterGirls] = useState(false);
+  const [filterBoys, setFilterBoys] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -146,20 +155,16 @@ const GlobalProvider = (props) => {
         setDarkMode,
         portugalGeo,
         setPortugalGeo,
-        filterOpen,
-        setFilterOpen,
-        flagOpen,
-        setFlagOpen,
         selectedFlag,
         setSelectedFlag,
         flag,
         setFlag,
         hoveredId,
         setHoveredId,
-        region,
-        setRegion,
-        selectedRegion,
-        setSelectedRegion,
+        location,
+        setLocation,
+        selectedLocation,
+        setSelectedLocation,
         selectedProduct,
         setSelectedProduct,
         zoomView,
@@ -176,6 +181,18 @@ const GlobalProvider = (props) => {
         setColor,
         category,
         setCategory,
+        selectedColor,
+        setSelectedColor,
+        selectedBrand,
+        setSelectedBrand,
+        selectedCategory,
+        setSelectedCategory,
+        filterAll,
+        setFilterAll,
+        filterGirls,
+        setFilterGirls,
+        filterBoys,
+        setFilterBoys,
       }}
     >
       {props.children}
