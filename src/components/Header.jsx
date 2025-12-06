@@ -16,6 +16,11 @@ import {
   ListItemText,
   useMediaQuery,
   useTheme,
+  FormControl,
+  InputLabel,
+  Button,
+  Menu,
+  ToggleButton, ToggleButtonGroup, NativeSelect,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
@@ -24,7 +29,46 @@ import LinkBar from "./LinkBar";
 import SearchBar from "./SearchBar";
 
 export default function Header() {
-  const [open, setOpen] = useState(false);
+
+  const {
+    darkMode,
+    setDarkMode,
+    portugalGeo,
+    setPortugalGeo,
+    filterOpen,
+    setFilterOpen,
+    flagOpen,
+    setFlagOpen,
+    selectedFlag,
+    setSelectedFlag,
+    flag,
+    setFlag,
+    hoveredId,
+    setHoveredId,
+    region,
+    setRegion,
+    selectedRegion,
+    setSelectedRegion,
+    selectedProduct,
+    setSelectedProduct,
+    zoomView,
+    setZoomView,
+    initialView,
+    setInitialView,
+    city,
+    setCity,
+    cityBounds,
+    setCityBounds,
+    product,
+    setProduct,
+    color,
+    setColor,
+    category,
+    setCategory,
+  } = useContext(GlobalContext);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  //const [open, setOpen] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -84,7 +128,10 @@ export default function Header() {
           }}
         >
           <SearchBar />
+
+
         </Box>
+
 
         {/* Right section hidden on very small screens */}
         <Box
@@ -94,7 +141,58 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ color: "white", cursor: "pointer" }}>EN</Typography>
+
+          <FormControl sx={{ minWidth: 80, position: "relative" }}>
+            <NativeSelect
+              value={selectedFlag}
+              onChange={(e) => setSelectedFlag(e.target.value)}
+              disableUnderline
+              sx={{
+                // Colors & layout
+                color: "white",
+                fontSize: "16px",
+                paddingLeft: "26px", // space for flag
+
+                // Remove arrow
+                "& select": {
+                  appearance: "none",
+                  WebkitAppearance: "none",
+                  MozAppearance: "none",
+                  paddingRight: "0px",
+                  color: "white",
+
+                },
+
+                // Remove border completely
+                "& .MuiNativeSelect-select": {
+                  border: "none",
+                },
+
+                "& option": {
+                  color: "white",
+                },
+              }}
+            >
+              <option value="EN">EN</option>
+              <option value="PT">PT</option>
+              <option value="ES">ES</option>
+            </NativeSelect>
+
+            {/* Flag inside the select, same size as text */}
+            <span
+              className={flag[selectedFlag]}
+              style={{
+                position: "absolute",
+                left: "0px",
+                top: "50%",
+                transform: "translateY(-50%)",
+                fontSize: "16px",  // 🔥 same size as label
+                lineHeight: "16px",
+                pointerEvents: "none",
+              }}
+            />
+          </FormControl>
+
 
           <Box
             sx={{ display: "flex", flexDirection: "column", color: "white" }}

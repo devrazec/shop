@@ -12,7 +12,7 @@ const GlobalProvider = (props) => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [flagOpen, setFlagOpen] = useState(false);
   const [selectedFlag, setSelectedFlag] = useState("EN");
-  const [flag, setFlag] = useState(["EN", "PT", "ES"]);
+  const [flag, setFlag] = useState({ EN: 'fi fi-gb', PT: 'fi fi-pt', ES: 'fi fi-es' });
   const [hoveredId, setHoveredId] = useState(null);
 
   const [region, setRegion] = useState({
