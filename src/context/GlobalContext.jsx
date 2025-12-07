@@ -7,7 +7,7 @@ import L from "leaflet";
 export const GlobalContext = createContext();
 
 const GlobalProvider = (props) => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
   const [portugalGeo, setPortugalGeo] = useState(portugalJson);
   const [selectedFlag, setSelectedFlag] = useState("EN");
   const [flag, setFlag] = useState([
