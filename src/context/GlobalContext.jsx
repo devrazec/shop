@@ -7,7 +7,7 @@ import L from "leaflet";
 export const GlobalContext = createContext();
 
 const GlobalProvider = (props) => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [portugalGeo, setPortugalGeo] = useState(portugalJson);
   const [selectedFlag, setSelectedFlag] = useState("EN");
   const [flag, setFlag] = useState([
@@ -147,6 +147,7 @@ const GlobalProvider = (props) => {
   const [filterAll, setFilterAll] = useState(true);
   const [filterGirls, setFilterGirls] = useState(false);
   const [filterBoys, setFilterBoys] = useState(false);
+  const [smallScreen, setSmallScreen] = useState(false);
 
   return (
     <GlobalContext.Provider
@@ -193,6 +194,7 @@ const GlobalProvider = (props) => {
         setFilterGirls,
         filterBoys,
         setFilterBoys,
+        smallScreen, setSmallScreen,
       }}
     >
       {props.children}

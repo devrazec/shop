@@ -74,34 +74,31 @@ export default function Header() {
     setFilterGirls,
     filterBoys,
     setFilterBoys,
+    smallScreen, setSmallScreen,
   } = useContext(GlobalContext);
   const [open, setOpen] = useState(false);
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
 
   const toggleDrawer = (state) => () => {
     setOpen(state);
   };
 
-  const logoSrc = isSmallScreen
-    ? "/shop/img/logo4.png" // smaller logo for mobile
-    : "/shop/img/logo3.png";
+
 
   return (
-    <AppBar position="static" sx={{ background: "#00453e" }}>
-      <Toolbar sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <AppBar position="static" sx={{ background: "#003C32" }}>
+      <Toolbar sx={{ mx: { xs: -1, sm: -1 }, display: "flex", alignItems: "center", gap: 2 }}>
         {/* Hamburger - visible on small screens */}
         <IconButton
           sx={{ color: "white", display: { xs: "flex", md: "none" } }}
           onClick={toggleDrawer(true)}
         >
-          <MenuIcon />
+          <MenuIcon style={{ fontSize: '30px' }} />
         </IconButton>
 
         {/* Logo */}
         <Box
           component="img"
-          src={logoSrc}
+          src={smallScreen ? "/shop/img/logo4.png" : "/shop/img/logo3.png"}
           alt="Company Logo"
           sx={{
             height: 40,

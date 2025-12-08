@@ -7,6 +7,30 @@ import { NotFound } from "./pages/NotFound";
 import { GlobalContext } from "./context/GlobalContext";
 
 // Material UI
+import {
+  AppBar,
+  Toolbar,
+  Box,
+  IconButton,
+  InputBase,
+  MenuItem,
+  Select,
+  Typography,
+  Badge,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  useMediaQuery,
+  useTheme,
+  FormControl,
+  InputLabel,
+  Button,
+  Menu,
+  ToggleButton,
+  ToggleButtonGroup,
+  NativeSelect,
+} from "@mui/material";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 
@@ -32,6 +56,7 @@ function App() {
 
   const {
     darkMode,
+    smallScreen, setSmallScreen,
     setDarkMode,
     portugalGeo,
     setPortugalGeo,
@@ -74,6 +99,9 @@ function App() {
     filterBoys,
     setFilterBoys,
   } = useContext(GlobalContext);
+
+  const theme = useTheme();
+  setSmallScreen(useMediaQuery(theme.breakpoints.down("sm")));
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>

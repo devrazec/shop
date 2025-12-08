@@ -59,6 +59,7 @@ export default function HeaderP() {
         setFilterGirls,
         filterBoys,
         setFilterBoys,
+        smallScreen, setSmallScreen,
     } = useContext(GlobalContext);
 
     const [searchValue, setSearchValue] = useState("");
@@ -83,21 +84,21 @@ export default function HeaderP() {
         <div className="surface-ground">
             {/* TOP BAR */}
             <div
-                className="w-full px-3 py-2 flex align-items-center justify-content-between"
+                className="w-full px-3 py-1 flex align-items-center justify-content-between"
                 style={{ background: "#003C32", color: "white" }}
             >
                 {/* LEFT: Logo + Hamburger on Mobile */}
                 <div className="flex align-items-center gap-3">
+                    
                     <i
                         className="pi pi-bars text-2xl cursor-pointer block lg:hidden"
                         onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
                     ></i>
-
+                    
                     <img
-                        src="/shop/img/logo3.png"
+                        src={smallScreen ? "/shop/img/logo4.png" : "/shop/img/logo3.png"}
                         alt="logo"
                         style={{ height: "40px" }}
-                        className="hidden lg:block"
                     />
                 </div>
 
@@ -115,7 +116,7 @@ export default function HeaderP() {
                             suggestions={filtered}
                             completeMethod={completeSearch}
                             onChange={(e) => setSearchValue(e.value)}
-                            placeholder="Search Shop"
+                            placeholder="Search Products"
                             className="w-full"
                             inputClassName="w-full p-inputtext-lg py-2 text-lg border-round-md pl-2"
                         />

@@ -1,9 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
 import { HashRouter } from "react-router-dom";
 
 import GlobalContext from "./context/GlobalContext";
+
+import App from "./App.tsx";
 
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';

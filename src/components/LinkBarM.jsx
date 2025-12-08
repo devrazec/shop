@@ -50,6 +50,7 @@ export default function LinkBarM() {
     setFilterGirls,
     filterBoys,
     setFilterBoys,
+    smallScreen, setSmallScreen,
   } = useContext(GlobalContext);
 
   return (
@@ -60,10 +61,10 @@ export default function LinkBarM() {
         display: "flex",
         alignItems: "center",
         gap: 3,
-        mt: 1,
-        ml: 2,
-        p: 1,
-        bgcolor: "#014034",
+        paddingLeft: 2,
+        paddingTop: 1,
+        paddingBottom: 1,
+        bgcolor: "#00473C",
         overflowX: { xs: "auto", sm: "auto" }, // scroll on small screens only
         scrollbarWidth: "thin", // Firefox
         "&::-webkit-scrollbar": {
@@ -78,12 +79,14 @@ export default function LinkBarM() {
         onClick={() => setFilterAll(true)}
         sx={{
           textTransform: "none",
+          minWidth: '80px',
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
           fontWeight: "bold",
           bgcolor: "#057642",
           color: "#fff",
+          borderColor: "#ccc",
           flexShrink: 0, // prevent shrinking in scroll
           "&:hover": { bgcolor: "#045c34" },
         }}
@@ -97,6 +100,7 @@ export default function LinkBarM() {
         onClick={() => setFilterGirls(true)}
         sx={{
           textTransform: "none",
+          minWidth: '80px',
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
@@ -115,6 +119,7 @@ export default function LinkBarM() {
         onClick={() => setFilterBoys(true)}
         sx={{
           textTransform: "none",
+          minWidth: '80px',
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",

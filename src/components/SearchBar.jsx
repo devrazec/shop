@@ -49,6 +49,7 @@ export default function SearchBarM() {
     setFilterGirls,
     filterBoys,
     setFilterBoys,
+    smallScreen, setSmallScreen,
   } = useContext(GlobalContext);
 
   const { data } = useDemoData({
@@ -180,7 +181,7 @@ export default function SearchBarM() {
           hiddenLabel
           {...params}
           label=""
-          placeholder="Search Shop"
+          placeholder="Search Products"
           variant="standard"
           InputProps={{
             ...params.InputProps,
