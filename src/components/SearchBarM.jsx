@@ -1,5 +1,9 @@
 import React, { useState, useContext } from "react";
-import { TextField, Box, Avatar, Autocomplete as AutocompleteM, 
+import {
+  TextField,
+  Box,
+  Avatar,
+  Autocomplete as AutocompleteM,
 } from "@mui/material";
 import { useDemoData } from "@mui/x-data-grid-generator";
 import { GlobalContext } from "../context/GlobalContext";
@@ -51,7 +55,8 @@ export default function SearchBarM() {
     setFilterBoys,
     smallScreen,
     setSmallScreen,
-    mobileMenu, setMobileMenu,
+    mobileMenu,
+    setMobileMenu,
   } = useContext(GlobalContext);
 
   const { data } = useDemoData({

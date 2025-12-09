@@ -6,7 +6,6 @@ export function Primereact() {
     <>
       <HeaderP />
       <SearchBarP />
-
     </>
   );
 }

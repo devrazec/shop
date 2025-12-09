@@ -76,7 +76,8 @@ export default function Header() {
     setFilterBoys,
     smallScreen,
     setSmallScreen,
-    mobileMenu, setMobileMenu,
+    mobileMenu,
+    setMobileMenu,
   } = useContext(GlobalContext);
   const [open, setOpen] = useState(false);
 

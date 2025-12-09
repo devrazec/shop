@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 import {
-  Card, CardActionArea, CardContent, Grid, Typography,
+  Card,
+  CardActionArea,
+  CardContent,
+  Grid,
+  Typography,
 } from "@mui/material";
 
 export function Home() {

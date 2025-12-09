@@ -23,8 +23,10 @@ export default function LinkBarP() {
     smallScreen,
     setSmallScreen,
 
-    color, setColor,
-    selectedColor, setSelectedColor,
+    color,
+    setColor,
+    selectedColor,
+    setSelectedColor,
 
     city,
     setCity,
@@ -36,11 +38,13 @@ export default function LinkBarP() {
     selectedCategory,
     setSelectedCategory,
 
-    seler, setSeler,
-    selectedSeler, setSelectedSeler,
+    seler,
+    setSeler,
+    selectedSeler,
+    setSelectedSeler,
 
-    mobileMenu, setMobileMenu,
-
+    mobileMenu,
+    setMobileMenu,
   } = useContext(GlobalContext);
 
   return (
@@ -155,7 +159,6 @@ export default function LinkBarP() {
 
       {/* Category */}
       <div className="p-field">
-
         <MultiSelect
           value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.value)}
@@ -171,7 +174,8 @@ export default function LinkBarP() {
           style={{
             borderRadius: "999px",
             padding: "0.36rem",
-            backgroundColor: selectedCategory.length > 0 ? "#057642" : "#00473C",
+            backgroundColor:
+              selectedCategory.length > 0 ? "#057642" : "#00473C",
             borderColor: "#ccc",
             border: "1px solid white",
             color: "white",
@@ -196,12 +200,10 @@ export default function LinkBarP() {
             </div>
           )}
         />
-
       </div>
 
       {/* Color */}
       <div className="p-field">
-
         <MultiSelect
           value={selectedColor}
           onChange={(e) => setSelectedColor(e.value)}
@@ -244,22 +246,20 @@ export default function LinkBarP() {
                   width: "16px",
                   height: "16px",
                   borderRadius: "50%",
-                  backgroundColor: option.colorCode ? String(option.colorCode) : "#CCCCCC",
+                  backgroundColor: option.colorCode
+                    ? String(option.colorCode)
+                    : "#CCCCCC",
                   border: "1px solid white",
                 }}
               />
 
               <span>{option.label}</span>
-
-
             </div>
           )}
         />
-
       </div>
 
       <div className="p-field">
-
         <MultiSelect
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.value)}
@@ -302,17 +302,17 @@ export default function LinkBarP() {
                   width: "16px",
                   height: "16px",
                   borderRadius: "50%",
-                  backgroundColor: option.colorCode ? String(option.colorCode) : "#CCCCCC",
+                  backgroundColor: option.colorCode
+                    ? String(option.colorCode)
+                    : "#CCCCCC",
                   border: "1px solid white",
                 }}
               />
 
               <span>{option.label}</span>
-
             </div>
           )}
         />
-
       </div>
 
       {/* Brand */}

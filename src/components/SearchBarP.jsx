@@ -3,7 +3,7 @@ import { DataView, DataViewLayoutOptions } from "primereact/dataview";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 import { classNames } from "primereact/utils";
-import { Button } from 'primereact/button';
+import { Button } from "primereact/button";
 
 import { TextField, Box } from "@mui/material";
 import { useDemoData } from "@mui/x-data-grid-generator";
@@ -176,7 +176,8 @@ export default function SearchBarP() {
           style={itemStyle}
           onClick={() => setSelectedProduct(item)}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, hoverStyle)}
-          onMouseLeave={(e) => Object.assign(e.currentTarget.style, itemStyle)}>
+          onMouseLeave={(e) => Object.assign(e.currentTarget.style, itemStyle)}
+        >
           {/* Image */}
           <div className="flex-shrink-0">
             <img
@@ -184,7 +185,7 @@ export default function SearchBarP() {
               src={item.image}
               alt={item.product}
               width={100}
-            //maxHeight={100}
+              //maxHeight={100}
             />
           </div>
           {/* Content */}
@@ -204,7 +205,8 @@ export default function SearchBarP() {
               <span className="text-xl font-semibold">{item.price}</span>
               <button
                 className="p-button-rounded p-button p-component"
-                disabled={item.status === "OUTOFSTOCK"}>
+                disabled={item.status === "OUTOFSTOCK"}
+              >
                 <i className="pi pi-shopping-cart"></i>
               </button>
             </div>
@@ -239,13 +241,15 @@ export default function SearchBarP() {
       <div
         key={item.id}
         className="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 p-3"
-        style={{ maxWidth: 260 }}>
+        style={{ maxWidth: 260 }}
+      >
         <div
           className="surface-card border-round-xl p-4 w-full cursor-pointer p-ripple"
           style={cardStyle}
           onClick={() => setSelectedProduct(item)}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, hoverStyle)}
-          onMouseLeave={(e) => Object.assign(e.currentTarget.style, cardStyle)}>
+          onMouseLeave={(e) => Object.assign(e.currentTarget.style, cardStyle)}
+        >
           {/* Top Row */}
           <div className="flex justify-content-between align-items-center mb-3">
             <div className="flex align-items-center gap-2 text-600">
@@ -287,9 +291,9 @@ export default function SearchBarP() {
               icon="pi pi-shopping-cart"
               className="p-button-success p-button-rounded"
               style={{
-                padding: '0.75rem 1rem', // bigger button
-                fontSize: '1rem',        // readable text/icon size
-                minWidth: '3rem',        // ensures icon button isn’t tiny
+                padding: "0.75rem 1rem", // bigger button
+                fontSize: "1rem", // readable text/icon size
+                minWidth: "3rem", // ensures icon button isn’t tiny
               }}
               aria-label="Add to Cart"
             />

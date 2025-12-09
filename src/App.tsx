@@ -4,7 +4,13 @@ import { Route, Routes } from "react-router-dom";
 import { GlobalContext } from "./context/GlobalContext";
 
 // Material UI
-import { useMediaQuery, useTheme, ThemeProvider, createTheme, CssBaseline } from "@mui/material";
+import {
+  useMediaQuery,
+  useTheme,
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+} from "@mui/material";
 
 import { Home } from "./pages/Home";
 import { Materialui } from "./pages/Materialui";

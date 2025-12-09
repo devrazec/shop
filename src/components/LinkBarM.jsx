@@ -17,7 +17,7 @@ export default function LinkBarM() {
   const {
     filterAll,
     setFilterAll,
-    
+
     filterGirls,
     setFilterGirls,
 
@@ -27,8 +27,10 @@ export default function LinkBarM() {
     smallScreen,
     setSmallScreen,
 
-    color, setColor,
-    selectedColor, setSelectedColor,
+    color,
+    setColor,
+    selectedColor,
+    setSelectedColor,
 
     city,
     setCity,
@@ -40,10 +42,13 @@ export default function LinkBarM() {
     selectedCategory,
     setSelectedCategory,
 
-    seler, setSeler,
-    selectedSeler, setSelectedSeler,
+    seler,
+    setSeler,
+    selectedSeler,
+    setSelectedSeler,
 
-    mobileMenu, setMobileMenu,
+    mobileMenu,
+    setMobileMenu,
   } = useContext(GlobalContext);
 
   return (

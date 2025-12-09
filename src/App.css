@@ -30,38 +30,38 @@ body {
 
 /* Background + rounded corners for the dropdown panel */
 .custom-multiselect-panel {
-    background: #003C32 !important;
-    border-radius: 12px !important;
-    border: 1px solid #0a5f4a !important;
-    padding: 10px !important;
-    color: white;
+  background: #003c32 !important;
+  border-radius: 12px !important;
+  border: 1px solid #0a5f4a !important;
+  padding: 10px !important;
+  color: white;
 }
 
 /* Optional: style each item */
 .custom-multiselect-panel .p-multiselect-items .p-multiselect-item {
-    background: #00473C;
-    color: white;
-    border-radius: 8px;
-    margin-bottom: 4px;
-    padding: 10px;
+  background: #00473c;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 4px;
+  padding: 10px;
 }
 
 /* Optional hover */
 .custom-multiselect-panel .p-multiselect-item:hover {
-    background: #006956 !important;
+  background: #006956 !important;
 }
 
 .p-multiselect-close {
-    color: white !important;
+  color: white !important;
 }
 
 .p-checkbox-box {
-    display: none !important;
+  display: none !important;
 }
 
 .p-multiselect-item.p-highlight {
-    background: #006956 !important;
-    color: white !important;
+  background: #006956 !important;
+  color: white !important;
 }
 
 .p-multiselect .p-multiselect-clear-icon {
@@ -80,20 +80,20 @@ body {
   position: relative;
 }
 
-.p-selectbutton .p-button-group .p-component{
-  background-color: #00473C !important;
+.p-selectbutton .p-button-group .p-component {
+  background-color: #00473c !important;
   border-color: transparent !important;
 }
 
 .p-button .p-component {
-  background-color: #00473C !important;
+  background-color: #00473c !important;
   border-color: transparent !important;
 }
 
 .p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
-    background: #00473C;
-    border-color: #00473C;
-    color: white;
+  background: #00473c;
+  border-color: #00473c;
+  color: white;
 }
 
 /* Panel container stays absolute under input */
@@ -132,8 +132,8 @@ body {
 
 /* Cards */
 .autocomplete-card {
-  background: #00473C;
-  border: 1px solid #2C6158;
+  background: #00473c;
+  border: 1px solid #2c6158;
   border-radius: 12px;
   padding: 12px;
   color: white;

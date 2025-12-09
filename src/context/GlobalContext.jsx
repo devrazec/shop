@@ -62,14 +62,14 @@ const GlobalProvider = (props) => {
   const [zoomView, setZoomView] = useState(7);
   const [initialView, setInitialView] = useState([39.3999, -8.2245]);
   const [city, setCity] = useState([
-    { label: "Lisbon", value: "Lisbon", colorCode: "#0074D9" },     // blue
-    { label: "Porto", value: "Porto", colorCode: "#FF4136" },       // red
-    { label: "Faro", value: "Faro", colorCode: "#2ECC40" },         // green
-    { label: "Coimbra", value: "Coimbra", colorCode: "#FF851B" },   // orange
-    { label: "Braga", value: "Braga", colorCode: "#B10DC9" },       // purple
+    { label: "Lisbon", value: "Lisbon", colorCode: "#0074D9" }, // blue
+    { label: "Porto", value: "Porto", colorCode: "#FF4136" }, // red
+    { label: "Faro", value: "Faro", colorCode: "#2ECC40" }, // green
+    { label: "Coimbra", value: "Coimbra", colorCode: "#FF851B" }, // orange
+    { label: "Braga", value: "Braga", colorCode: "#B10DC9" }, // purple
     { label: "Bragança", value: "Bragança", colorCode: "#39CCCC" }, // teal
-    { label: "Leiria", value: "Leiria", colorCode: "#F012BE" },     // magenta
-    { label: "Guarda", value: "Guarda", colorCode: "#85144b" },     // dark red
+    { label: "Leiria", value: "Leiria", colorCode: "#F012BE" }, // magenta
+    { label: "Guarda", value: "Guarda", colorCode: "#85144b" }, // dark red
   ]);
 
   const [cityBounds, setCityBounds] = useState({
@@ -191,7 +191,8 @@ const GlobalProvider = (props) => {
         setCategory,
         selectedCategory,
         setSelectedCategory,
-        seler, setSeler,
+        seler,
+        setSeler,
         selectedSeler,
         setSelectedSeler,
         filterAll,
@@ -202,7 +203,8 @@ const GlobalProvider = (props) => {
         setFilterBoys,
         smallScreen,
         setSmallScreen,
-        mobileMenu, setMobileMenu,
+        mobileMenu,
+        setMobileMenu,
       }}
     >
       {props.children}
