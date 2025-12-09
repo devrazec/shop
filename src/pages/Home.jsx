@@ -5,6 +5,7 @@ import {
   CardContent,
   Grid,
   Typography,
+  Box,
 } from "@mui/material";
 
 export function Home() {
@@ -31,11 +32,15 @@ export function Home() {
                 gap: 2,
               }}
             >
-              <img
-                src="/img/pic2.png"
+              <Box
+                component="img"
+                src="/shop/img/pic2.png"
                 alt="Material UI"
-                style={{ width: 500, objectFit: "contain" }}
+                sx={{
+                  width: 600, objectFit: "contain",
+                }}
               />
+
               <Typography variant="h5" fontWeight="600">
                 Material UI
               </Typography>
@@ -56,10 +61,13 @@ export function Home() {
                 gap: 2,
               }}
             >
-              <img
-                src="/img/pic1.png"
-                alt="PrimeReact"
-                style={{ width: 500, objectFit: "contain" }}
+              <Box
+                component="img"
+                src="/shop/img/pic1.png"
+                alt="Primereact"
+                sx={{
+                  width: 600, objectFit: "contain",
+                }}
               />
               <Typography variant="h5" fontWeight="600">
                 PrimeReact
