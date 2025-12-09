@@ -1,6 +1,6 @@
 # E-commerce
 
-This is a dynamic e-commerce project built with React and Material-UI (MUI).
+This is a dynamic e-commerce project built with React and Material-UI (MUI) and Primereact.
 
 # 🧰 Tech Stack
 
