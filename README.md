@@ -148,7 +148,9 @@ npm run preview
 
 http://localhost:3000
 
+![Pic0](./src/assets/img/pic0.png)
 ![Pic1](./src/assets/img/pic1.png)
+![Pic2](./src/assets/img/pic2.png)
 
 # Demo
 
