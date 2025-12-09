@@ -32,7 +32,7 @@ export function Home() {
               }}
             >
               <img
-                src="shop/img/pic2.png"
+                src="/img/pic2.png"
                 alt="Material UI"
                 style={{ width: 500, objectFit: "contain" }}
               />
@@ -57,7 +57,7 @@ export function Home() {
               }}
             >
               <img
-                src="shop/img/pic1.png"
+                src="/img/pic1.png"
                 alt="PrimeReact"
                 style={{ width: 500, objectFit: "contain" }}
               />
