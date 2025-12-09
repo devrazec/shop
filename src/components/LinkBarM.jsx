@@ -1,56 +1,49 @@
 import React, { useContext, useState } from "react";
-import { Box, Button, Divider, IconButton, Typography, Menu, MenuItem, } from "@mui/material";
+import {
+  Box,
+  Button,
+  Divider,
+  IconButton,
+  Typography,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { GlobalContext } from "../context/GlobalContext";
-import ColorSelectorM from "./ColorSelectorM";
 
 import MenuIcon from "@mui/icons-material/Menu";
 
 export default function LinkBarM() {
   const {
-    darkMode,
-    setDarkMode,
-    portugalGeo,
-    setPortugalGeo,
-    selectedFlag,
-    setSelectedFlag,
-    flag,
-    setFlag,
-    hoveredId,
-    setHoveredId,
-    location,
-    setLocation,
-    selectedLocation,
-    setSelectedLocation,
-    selectedProduct,
-    setSelectedProduct,
-    zoomView,
-    setZoomView,
-    initialView,
-    setInitialView,
-    city,
-    setCity,
-    cityBounds,
-    setCityBounds,
-    product,
-    setProduct,
-    color,
-    setColor,
-    category,
-    setCategory,
-    selectedColor,
-    setSelectedColor,
-    selectedBrand,
-    setSelectedBrand,
-    selectedCategory,
-    setSelectedCategory,
     filterAll,
     setFilterAll,
+    
     filterGirls,
     setFilterGirls,
+
     filterBoys,
     setFilterBoys,
-    smallScreen, setSmallScreen,
+
+    smallScreen,
+    setSmallScreen,
+
+    color, setColor,
+    selectedColor, setSelectedColor,
+
+    city,
+    setCity,
+    selectedCity,
+    setSelectedCity,
+
+    category,
+    setCategory,
+    selectedCategory,
+    setSelectedCategory,
+
+    seler, setSeler,
+    selectedSeler, setSelectedSeler,
+
+    mobileMenu, setMobileMenu,
   } = useContext(GlobalContext);
 
   return (
@@ -79,7 +72,7 @@ export default function LinkBarM() {
         onClick={() => setFilterAll(true)}
         sx={{
           textTransform: "none",
-          minWidth: '80px',
+          minWidth: "80px",
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
@@ -100,7 +93,7 @@ export default function LinkBarM() {
         onClick={() => setFilterGirls(true)}
         sx={{
           textTransform: "none",
-          minWidth: '80px',
+          minWidth: "80px",
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
@@ -119,7 +112,7 @@ export default function LinkBarM() {
         onClick={() => setFilterBoys(true)}
         sx={{
           textTransform: "none",
-          minWidth: '80px',
+          minWidth: "80px",
           borderRadius: "999px",
           px: 2,
           whiteSpace: "nowrap",
@@ -133,7 +126,23 @@ export default function LinkBarM() {
         <Typography sx={{ color: "white" }}>Boys</Typography>
       </Button>
 
-      <ColorSelectorM />
+      <Button
+        variant="outlined"
+        endIcon={<KeyboardArrowDownIcon />}
+        sx={{
+          textTransform: "none",
+          borderRadius: "999px",
+          px: 2,
+          whiteSpace: "nowrap",
+          fontWeight: "bold",
+          color: "#FFF",
+          borderColor: "#ccc",
+          flexShrink: 0,
+          "&:hover": { bgcolor: "#045c34" },
+        }}
+      >
+        <Typography sx={{ color: "white" }}>Color</Typography>
+      </Button>
 
       <Button
         variant="outlined"

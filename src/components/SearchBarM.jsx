@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
-import { TextField, Box, Avatar } from "@mui/material";
-import Autocomplete from "@mui/material/Autocomplete";
+import { TextField, Box, Avatar, Autocomplete as AutocompleteM, 
+} from "@mui/material";
 import { useDemoData } from "@mui/x-data-grid-generator";
 import { GlobalContext } from "../context/GlobalContext";
 import { v4 as uuidv4 } from "uuid";
@@ -49,7 +49,9 @@ export default function SearchBarM() {
     setFilterGirls,
     filterBoys,
     setFilterBoys,
-    smallScreen, setSmallScreen,
+    smallScreen,
+    setSmallScreen,
+    mobileMenu, setMobileMenu,
   } = useContext(GlobalContext);
 
   const { data } = useDemoData({
@@ -75,7 +77,7 @@ export default function SearchBarM() {
   // Build rows safely (guard when demo data hasn't loaded yet)
   const rows =
     data?.rows?.map((row, index) => {
-      const location = city[Math.floor(Math.random() * city.length)];
+      const location = city[Math.floor(Math.random() * city.length)].label;
 
       const { lat, lng } = getRandomLatLng(location);
 
@@ -83,7 +85,7 @@ export default function SearchBarM() {
       const randomProduct = product[Math.floor(Math.random() * product.length)];
 
       return {
-        id: row.id,
+        id: row.id || randomId(),
         product: randomProduct.name,
         seller: row.traderName,
         stock: row.quantity,
@@ -103,7 +105,7 @@ export default function SearchBarM() {
   //console.log(rows);
 
   return (
-    <Autocomplete
+    <AutocompleteM
       sx={{ flex: 1 }}
       options={rows}
       // make label unique by including id (prevents duplicate React keys)

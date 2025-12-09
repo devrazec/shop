@@ -1,20 +1,32 @@
 import { Link } from "react-router-dom";
-import { Card, CardActionArea, CardContent } from "@mui/material";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import {
+  Card, CardActionArea, CardContent, Grid, Typography,
+} from "@mui/material";
 
 export function Home() {
   return (
     <Grid
       container
       spacing={4}
-      sx={{ p: 4, minHeight: "100vh", alignItems: "center", justifyContent: "center" }}
+      sx={{
+        p: 4,
+        minHeight: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       {/* Material UI Column */}
       <Grid item xs={12} md={6}>
         <Card sx={{ borderRadius: 4, boxShadow: 3 }}>
           <CardActionArea component={Link} to="/materialui">
-            <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+            <CardContent
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
               <img
                 src="shop/img/materialui.png"
                 alt="Material UI"
@@ -32,7 +44,14 @@ export function Home() {
       <Grid item xs={12} md={6}>
         <Card sx={{ borderRadius: 4, boxShadow: 3 }}>
           <CardActionArea component={Link} to="/primereact">
-            <CardContent sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2 }}>
+            <CardContent
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: 2,
+              }}
+            >
               <img
                 src="shop/img/primereact.png"
                 alt="PrimeReact"

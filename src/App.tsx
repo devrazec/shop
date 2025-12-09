@@ -1,107 +1,46 @@
-import { useContext, Suspense } from "react";
+import { useContext, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
+
+import { GlobalContext } from "./context/GlobalContext";
+
+// Material UI
+import { useMediaQuery, useTheme, ThemeProvider, createTheme, CssBaseline } from "@mui/material";
+
 import { Home } from "./pages/Home";
 import { Materialui } from "./pages/Materialui";
 import { Primereact } from "./pages/Primereact";
 import { NotFound } from "./pages/NotFound";
-import { GlobalContext } from "./context/GlobalContext";
 
-// Material UI
-import {
-  AppBar,
-  Toolbar,
-  Box,
-  IconButton,
-  InputBase,
-  MenuItem,
-  Select,
-  Typography,
-  Badge,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  useMediaQuery,
-  useTheme,
-  FormControl,
-  InputLabel,
-  Button,
-  Menu,
-  ToggleButton,
-  ToggleButtonGroup,
-  NativeSelect,
-} from "@mui/material";
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import "./App.css";
 
 const lightTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: "light",
     primary: {
-      main: '#1976d2',
+      main: "#1976d2",
     },
-  }
+  },
 });
 
 const darkTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: "dark",
     primary: {
-      main: '#1976d2',
+      main: "#1976d2",
     },
-  }
+  },
 });
 
 function App() {
-
-  const {
-    darkMode,
-    smallScreen, setSmallScreen,
-    setDarkMode,
-    portugalGeo,
-    setPortugalGeo,
-    selectedFlag,
-    setSelectedFlag,
-    flag,
-    setFlag,
-    hoveredId,
-    setHoveredId,
-    location,
-    setLocation,
-    selectedLocation,
-    setSelectedLocation,
-    selectedProduct,
-    setSelectedProduct,
-    zoomView,
-    setZoomView,
-    initialView,
-    setInitialView,
-    city,
-    setCity,
-    cityBounds,
-    setCityBounds,
-    product,
-    setProduct,
-    color,
-    setColor,
-    category,
-    setCategory,
-    selectedColor,
-    setSelectedColor,
-    selectedBrand,
-    setSelectedBrand,
-    selectedCategory,
-    setSelectedCategory,
-    filterAll,
-    setFilterAll,
-    filterGirls,
-    setFilterGirls,
-    filterBoys,
-    setFilterBoys,
-  } = useContext(GlobalContext);
+  const { darkMode, setSmallScreen } = useContext(GlobalContext);
 
   const theme = useTheme();
-  setSmallScreen(useMediaQuery(theme.breakpoints.down("sm")));
+  const isSmall = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // ⭐ FIX: update context AFTER render, not during
+  useEffect(() => {
+    setSmallScreen(isSmall);
+  }, [isSmall, setSmallScreen]);
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>

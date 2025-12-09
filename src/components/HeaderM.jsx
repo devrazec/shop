@@ -28,7 +28,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LinkBarM from "./LinkBarM";
-import SearchBar from "./SearchBar";
+import SearchBarM from "./SearchBarM";
 
 export default function Header() {
   const {
@@ -74,7 +74,9 @@ export default function Header() {
     setFilterGirls,
     filterBoys,
     setFilterBoys,
-    smallScreen, setSmallScreen,
+    smallScreen,
+    setSmallScreen,
+    mobileMenu, setMobileMenu,
   } = useContext(GlobalContext);
   const [open, setOpen] = useState(false);
 
@@ -82,17 +84,25 @@ export default function Header() {
     setOpen(state);
   };
 
-
-
   return (
-    <AppBar position="static" sx={{ background: "#003C32" }}>
-      <Toolbar sx={{ mx: { xs: -1, sm: -1 }, display: "flex", alignItems: "center", gap: 2 }}>
+    <AppBar
+      position="static"
+      sx={{ background: "#003C32", margin: 0, padding: 0 }}
+    >
+      <Toolbar
+        sx={{
+          mx: { xs: -1, sm: -1 },
+          display: "flex",
+          alignItems: "center",
+          gap: 2,
+        }}
+      >
         {/* Hamburger - visible on small screens */}
         <IconButton
           sx={{ color: "white", display: { xs: "flex", md: "none" } }}
           onClick={toggleDrawer(true)}
         >
-          <MenuIcon style={{ fontSize: '30px' }} />
+          <MenuIcon style={{ fontSize: "30px" }} />
         </IconButton>
 
         {/* Logo */}
@@ -131,7 +141,7 @@ export default function Header() {
             flex: 1,
           }}
         >
-          <SearchBar />
+          <SearchBarM />
         </Box>
 
         {/* Right section hidden on very small screens */}
@@ -142,7 +152,6 @@ export default function Header() {
             alignItems: "center",
           }}
         >
-
           {/* <FormControl sx={{ minWidth: 80, position: "relative" }}>
             <NativeSelect
               value={selectedFlag}
@@ -206,11 +215,17 @@ export default function Header() {
             }}
             displayEmpty
             renderValue={() => {
-              const selected = flag.find(f => f.code === selectedFlag);
+              const selected = flag.find((f) => f.code === selectedFlag);
               return (
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  {selected && <span className={selected.icon} style={{ fontSize: 18 }} />}
-                  <Typography sx={{ fontWeight: 600, paddingLeft: "5px", color: "white" }}>{selected.code}</Typography>
+                  {selected && (
+                    <span className={selected.icon} style={{ fontSize: 18 }} />
+                  )}
+                  <Typography
+                    sx={{ fontWeight: 600, paddingLeft: "5px", color: "white" }}
+                  >
+                    {selected.code}
+                  </Typography>
                 </Box>
               );
             }}
@@ -219,14 +234,19 @@ export default function Header() {
               "& .MuiSelect-select": { display: "flex", alignItems: "center" },
               "& .MuiOutlinedInput-notchedOutline": { border: "none" },
               "&:hover .MuiOutlinedInput-notchedOutline": { border: "none" },
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": { border: "none" },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                border: "none",
+              },
               "& .MuiSelect-icon": { color: "white" },
             }}
           >
             {flag.map((f) => (
               <MenuItem key={f.code} value={f.code}>
                 <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <span className={f.icon} style={{ fontSize: 24, marginRight: 8 }} />
+                  <span
+                    className={f.icon}
+                    style={{ fontSize: 24, marginRight: 8 }}
+                  />
                   <Typography>{f.name}</Typography>
                 </Box>
               </MenuItem>

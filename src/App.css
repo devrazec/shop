@@ -27,3 +27,125 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Background + rounded corners for the dropdown panel */
+.custom-multiselect-panel {
+    background: #003C32 !important;
+    border-radius: 12px !important;
+    border: 1px solid #0a5f4a !important;
+    padding: 10px !important;
+    color: white;
+}
+
+/* Optional: style each item */
+.custom-multiselect-panel .p-multiselect-items .p-multiselect-item {
+    background: #00473C;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 4px;
+    padding: 10px;
+}
+
+/* Optional hover */
+.custom-multiselect-panel .p-multiselect-item:hover {
+    background: #006956 !important;
+}
+
+.p-multiselect-close {
+    color: white !important;
+}
+
+.p-checkbox-box {
+    display: none !important;
+}
+
+.p-multiselect-item.p-highlight {
+    background: #006956 !important;
+    color: white !important;
+}
+
+.p-multiselect .p-multiselect-clear-icon {
+  position: absolute;
+  right: 2.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.p-multiselect .p-multiselect-label-container {
+  padding-right: 2rem !important;
+}
+
+.p-multiselect {
+  position: relative;
+}
+
+.p-selectbutton .p-button-group .p-component{
+  background-color: #00473C !important;
+  border-color: transparent !important;
+}
+
+.p-button .p-component {
+  background-color: #00473C !important;
+  border-color: transparent !important;
+}
+
+.p-selectbutton .p-button:not(.p-disabled):not(.p-highlight):hover {
+    background: #00473C;
+    border-color: #00473C;
+    color: white;
+}
+
+/* Panel container stays absolute under input */
+.p-autocomplete-panel {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns desktop */
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100% !important; /* match input width */
+  min-width: 220px; /* ensure cards fit */
+  box-sizing: border-box;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .p-autocomplete-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+  .p-autocomplete-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .p-autocomplete-panel {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Cards */
+.autocomplete-card {
+  background: #00473C;
+  border: 1px solid #2C6158;
+  border-radius: 12px;
+  padding: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: 100%;
+}
+
+.autocomplete-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
