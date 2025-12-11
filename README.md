@@ -23,14 +23,14 @@ This is a dynamic e-commerce project built with React and Material-UI (MUI) and 
 
 ## Interactive DataGrid:
 
-- Custom row layout with company logo and detailed info
-- Action buttons: Apply, See More, Map
-- See More button opens a modal with detailed product info
-- Responsive row heights and clean styling
+- Custom layout with company logo and detailed info
+- Action buttons: Buy, Map
+- Responsive and clean styling
 - Top bar with total results and title
 - Map Integration
 - Each product includes coordinates for its location
 - Can link to Google Maps or other map integrations
+- Real-time map filtering
 
 ## Modern UI:
 
